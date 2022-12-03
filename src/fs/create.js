@@ -3,7 +3,7 @@ import fs from "fs";
 const create = async () => {
   const path = "./src/fs/files/fresh.txt";
 
-  fs.access(path, fs.F_OK, (existenceError) => {
+  fs.access(path, fs.constants.F_OK, (existenceError) => {
     try {
       if (!existenceError) {
         throw new Error("FS operation failed");
